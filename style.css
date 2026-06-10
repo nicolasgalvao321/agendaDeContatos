@@ -1,169 +1,182 @@
-/* Reset básico para zerar as margens padrão */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    background-color: #efeae2; /* Cor de fundo padrão do chat do WhatsApp */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
+body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:#efeae2;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:20px;
 }
 
-/* Container Principal (Simula a tela do app) */
-.container {
-    background-color: #ffffff;
-    width: 100%;
-    max-width: 450px;
-    height: 600px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+.container{
+    width:100%;
+    max-width:450px;
+    min-height:90vh;
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(0,0,0,.12);
+    display:flex;
+    flex-direction:column;
 }
 
-/* Cabeçalho (Verde WhatsApp) */
-h1 {
-    background-color: #008069; /* Verde oficial do WhatsApp */
-    color: white;
-    font-size: 1.2rem;
-    padding: 16px;
-    font-weight: 500;
-    text-align: left;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+
+h1{
+    background:#008069;
+    color:white;
+    padding:20px;
+    font-size:1.5rem;
+    font-weight:600;
+    margin:0;
 }
 
-/* Seção de inputs (Formulário) */
-.inserir-contato {
-    background-color: #f0f2f5; /* Fundo cinza claro da barra de digitação */
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    border-bottom: 1px solid #e9edef;
+
+
+.inserir-contato{
+    background:#f0f2f5;
+    padding:16px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    border-bottom:1px solid #e9edef;
 }
 
-/* Estilização dos Inputs */
-.inserir-contato input {
-    width: 100%;
-    padding: 10px 14px;
-    border: 1px solid #ffffff;
-    border-radius: 8px;
-    font-size: 0.95rem;
-    background-color: #ffffff;
-    outline: none;
-    transition: 0.2s;
+.inserir-contato input{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:#fff;
+    font-size:15px;
+    outline:none;
+    transition:.2s;
 }
 
-.inserir-contato input:focus {
-    border-color: #008069;
+.inserir-contato input:focus{
+    box-shadow:0 0 0 2px #00a88433;
 }
 
-/* Botão de Enviar (O "Enviar" verde do Zap) */
-#button {
-    background-color: #00a884; /* Verde de ação ativa */
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 8px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background 0.2s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+
+#button{
+    background:#00a884;
+    color:white;
+    border:none;
+    padding:14px;
+    border-radius:12px;
+    font-size:1.3rem;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.2s;
 }
 
-#button:hover {
-    background-color: #008069;
+#button:hover{
+    background:#008069;
+    transform:translateY(-2px);
 }
 
-/* Título de Contatos Salvos */
-h2 {
-    font-size: 0.9rem;
-    color: #667781;
-    text-transform: uppercase;
-    padding: 16px 16px 8px 16px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+
+
+h2{
+    padding:16px;
+    font-size:.95rem;
+    color:#667781;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+    font-weight:600;
 }
 
-/* Área da Lista de Contatos (Com scroll se encher) */
-#display {
-    flex: 1;
-    overflow-y: auto;
-    padding: 0 8px 16px 8px;
-    background-color: #efeae2; /* Mantém o fundo de chat na lista */
+
+
+#display{
+    flex:1;
+    overflow-y:auto;
+    padding:8px;
+    background:#efeae2;
 }
 
-/* O "Balão" do Contato (Simula uma mensagem recebida) */
-.contato {
-    background-color: #ffffff; /* Balão branco para os contatos */
-    margin: 8px;
-    padding: 12px;
-    border-radius: 8px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    animation: fadeIn 0.3s ease;
+
+
+#display::-webkit-scrollbar{
+    width:6px;
 }
 
-/* Estilo dos textos dentro do contato */
-.contato strong {
-    color: #111b21; /* Cor de texto quase preta do WhatsApp */
-    font-size: 1rem;
+#display::-webkit-scrollbar-thumb{
+    background:#00a884;
+    border-radius:10px;
 }
 
-.contato small {
-    color: #667781; /* Cinza dos subtextos */
-    font-size: 0.85rem;
+
+
+.contato{
+    background:white;
+    margin-bottom:12px;
+    padding:15px;
+    border-radius:16px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+    animation:fadeIn .3s ease;
+    transition:.2s;
 }
 
-/* Div que segura os botões de ação */
-.contato div:last-child {
-    display: flex;
-    gap: 6px;
+.contato:hover{
+    transform:translateY(-2px);
 }
 
-/* Botões de Editar e Deletar */
-.contato button {
-    border: none;
-    padding: 6px 10px;
-    border-radius: 5px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: 0.2s;
+.contato strong{
+    color:#111b21;
+    font-size:1rem;
 }
 
-.contato button.edit {
-    background-color: #e9edef;
-    color: #008069;
+.contato small{
+    color:#667781;
+    display:block;
+    margin-top:4px;
+    font-size:.85rem;
+    word-break:break-word;
 }
 
-.contato button.edit:hover {
-    background-color: #dfe2e4;
+
+
+.contato div:last-child{
+    display:flex;
+    gap:8px;
 }
 
-.contato button.delete {
-    background-color: #ffebee;
-    color: #ea0038;
+.contato button{
+    border:none;
+    padding:8px 12px;
+    border-radius:10px;
+    font-size:.8rem;
+    font-weight:600;
+    cursor:pointer;
+    transition:.2s;
 }
 
-.contato button.delete:hover {
-    background-color: #ffcdd2;
+.contato button.edit{
+    background:#e7f7f3;
+    color:#008069;
 }
 
-/* Efeito suave ao adicionar novo contato */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+.contato button.edit:hover{
+    background:#d5f0ea;
+}
+
+.contato button.delete{
+    background:#ffe8ec;
+    color:#ea0038;
+}
+
+.contato button.delete:hover{
+    background:#ffd1da;
 }
